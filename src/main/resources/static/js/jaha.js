@@ -1,8 +1,21 @@
 $(function() {
 
     // 모바일 햄버거 메뉴
-    $('.hamberger-btn>button').on('click', function() {
+    $('.hamburger-btn').on('click', function(e) {
+        e.preventDefault();
+        $(this).hide();
         $('nav').toggleClass('on');
+        $('.hamburger-btn-x>a').addClass('on');
+        $('.dim').addClass('on');
+        // $('body').css("pointer-events","none");
+    });
+    $('.hamburger-btn-x').on('click', function(e) {
+        e.preventDefault();
+        $('.hamburger-btn').show(); 
+        $('nav').toggleClass('on');
+        $(this).children().removeClass('on');
+        $('.dim').removeClass('on');
+        // $('body').css("pointer-events","auto");
     });
 
     $('.scroll-stop').click(function() {
@@ -29,12 +42,14 @@ $(function() {
         $(this).on('click', function(e) {
             var popup = $(this).parent().siblings();
             popup.eq(idx).fadeIn(300).show();
+            $('body').css("pointer-events","none");
             // console.log(idx);
         });
     });
 
     // 자하생력액 : brand2 light
-    $('.brand2 li').each(function() {
+    $('.brand2 li').each(function(idx) {
+        
         $(this).on('mouseover', function() {
             $(this).siblings().removeClass('on');
             $(this).addClass('on');
@@ -44,9 +59,10 @@ $(function() {
         });
         
         // 각 li 요소 클릭했을 때 팝업 띄우기
-        $(this).on('click', function() {
-            $(this).parent().parent().siblings().fadeIn(300).show();
-        });
+        // $(this).on('click', function() {
+        //     console.log(idx);
+        //     // $(this).parent().parent().siblings().eq(idx+1).fadeIn(300).show();
+        // });
     });
 
    
@@ -63,6 +79,34 @@ $(function() {
         }
     });
 
+
+    // 자하생력 히스토리
+    var historySwiper = new Swiper(".jahaHistory", {
+        spaceBetween: 20,
+        slidesPerView: 3,
+        centeredSlides: false,
+        speed: 1000,
+        keyboard: {
+            enabled: true,
+        },
+        loop: true,
+        autoplay: false,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar",
+        },
+    });
+
+    var productJaha = new Swiper(".productJaha", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: false,
+      navigation: {
+        nextEl: ".product-button-next",
+        prevEl: ".product-button-prev",
+      },
+    });
 
     // 주변 약국찾기
    $('.location button').each(function(idx) {
@@ -95,9 +139,35 @@ $(function() {
 function openPopup(modalname) {
     document.get
     $("." + modalname).fadeIn(300);
+    $('body').css("pointer-events","none");
 }
 
 function closePopup(modalname) {
     document.get
     $("." + modalname).fadeOut(300);
+    $('body').css("pointer-events","auto");
+}
+
+function openPopupDim(modalname) {
+    document.get
+    $("." + modalname).fadeIn(300);
+    $('body').css("pointer-events","none");
+    $('.dim').addClass('on');
+}
+
+function closePopupDim(modalname) {
+    document.get
+    $("." + modalname).fadeOut(300);
+    $('body').css("pointer-events","auto");
+    $('.dim').removeClass('on');
+}
+
+function popupWindow() {
+    window.open("terms.html","popup", "width=320, height=500, left=0, top=0, scrollbars=no,titlebar=no,status=no,resizable=no,fullscreen=no");
+}
+
+// 2023.04.28 함수추가
+function pageMove(seq){
+    var offset = $("#menu" + seq).offset();
+    $('html, body').animate({scrollTop : offset.top}, 700);
 }

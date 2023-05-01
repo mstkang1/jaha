@@ -15,7 +15,6 @@ spring:
     check-template-location: true
     suffix: .html
     mode: HTML
-    cache: false
 ---
 spring:
   config:
@@ -26,6 +25,11 @@ spring:
     url: jdbc:mysql://localhost:3306/knpharm?serverTimezone=Asia/Seoul
     username: root
     password: master
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
   thymeleaf:
     cache: false # 개발시에는 수정시 즉시 반영 가능하게.
 

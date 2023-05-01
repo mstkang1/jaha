@@ -21,6 +21,32 @@ $(function() {
     .addTo(controller)
 
 
+    // 메인화면 키비주얼 애니메이션 컨트롤러
+    var controller1 = new ScrollMagic.Controller({
+        globalSceneOptions: {
+            duration: 500
+        }
+    });
+
+    // 모바일 메인화면 자하생력 병 애니매이션
+    var tween1 = TweenMax.to('.ani-mo-jaha', 1, {
+        scale: 0.5,
+        x: -55,
+        y: 500
+    });
+    // 애니메이션 시작지점 설정 (바위 배경 경계)
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '.rock-bg',
+        duration: 0.5,
+    })
+    .setTween(tween1)
+    // .addIndicators()
+    .addTo(controller1)
+
+
+
+
+
     // nav 컨트롤러
     var navController = new ScrollMagic.Controller();
     
@@ -40,7 +66,7 @@ $(function() {
         {
             triggerElement: ".history-wrap",
             triggerHook: "onCenter",
-            duration: 6349
+            duration: 6637
         })
         .setClassToggle(".menu2", "on")
         // .addIndicators()
@@ -158,19 +184,20 @@ $(function() {
         // .addIndicators({indent:900})
         .addTo(materialController);
 
+    // 2023.04.28 GNB이동 변경
+    
+    // // GNB 이동
+    // controller.scrollTo(function (newpos) {
+    //     TweenMax.to(window, 2,{scrollTo: {y: newpos}});
+    // });
 
-    // GNB 이동
-    controller.scrollTo(function (newpos) {
-        TweenMax.to(window, 3,{scrollTo: {y: newpos}});
-    });
-
-    var menu = document.querySelector("nav>ul");
-    menu.addEventListener("click", function (e) {
-        var id = e.target.hash;
-        e.preventDefault();
-        controller.scrollTo(id);
-        if (window.history && window.history.pushState) {
-            history.pushState("", document.title, id);
-        }
-    });
+    // var menu = document.querySelector("nav>ul");
+    // menu.addEventListener("click", function (e) {
+    //     var id = e.target.hash;
+    //     e.preventDefault();
+    //     controller.scrollTo(id);
+    //     if (window.history && window.history.pushState) {
+    //         history.pushState("", document.title, id);
+    //     }
+    // });
 });
