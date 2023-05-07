@@ -13,8 +13,13 @@
     <script src="/js/jaha.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/jaha.css">
+    <th:block th:if="${@environment.getProperty('spring.config.activate.on-profile') == 'local'}">
+        <script th:inline="javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=l2o6xz5abj&submodules=geocoder"></script>
+    </th:block>
+    <th:block th:if="${@environment.getProperty('spring.config.activate.on-profile') == 'prod'}">
+        <script th:inline="javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=bsj7qymjt7&submodules=geocoder"></script>
+    </th:block>
 
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=l2o6xz5abj&submodules=geocoder"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>자하생력</title>
 </head>
