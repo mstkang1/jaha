@@ -1,9 +1,9 @@
-package com.knpharm.jaha.domain;
+package com.knpharm.jaha.dto;
 
 import lombok.Data;
 
 @Data
-public class ProductVO {
+public class ProductDto {
     private String productName;
     private String brandCode;
     private int productOrder;

@@ -1,10 +1,10 @@
-package com.knpharm.jaha.domain;
+package com.knpharm.jaha.dto;
 
 import lombok.Data;
 
 
 @Data
-public class StoreVO {
+public class StoreDto {
     private int storeSeq;
 
     private String brandCode;
