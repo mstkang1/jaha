@@ -6,7 +6,7 @@
 <mapper namespace="com.knpharm.jaha.mapper.StoreMapper">
 
     <!-- 약국 리스트 조회 -->
-    <select id="selectStoreList" parameterType="com.knpharm.jaha.dto.StoreDto" resultType="com.knpharm.jaha.dto.StoreDto">
+    <select id="selectStoreList" parameterType="StoreDto" resultType="StoreDto">
         <![CDATA[
         SELECT
             *
