@@ -107,6 +107,32 @@ $(function() {
         prevEl: ".product-button-prev",
       },
     });
+
+    // 주변 약국찾기
+   $('.location button').each(function(idx) {
+        $(this).on('click', function(e) {
+            e.preventDefault();
+            // console.log(idx);
+            $(this).addClass('on');
+            $(this).siblings().removeClass('on');
+            $(this).parent().siblings().removeClass('on');
+            $(this).parent().siblings().eq(idx).addClass('on');
+        });
+   });
+   $('.distance button').each(function(idx) {
+        $(this).on('click', function(e) {
+            e.preventDefault();
+            $(this).addClass('on');
+            $(this).siblings().removeClass('on');
+        });
+    });
+    $('.juso button').each(function(idx) {
+        $(this).on('click', function(e) {
+            e.preventDefault();
+            $(this).addClass('on');
+            $(this).siblings().removeClass('on');
+        });
+    });
 });
 
 //팝업 열기

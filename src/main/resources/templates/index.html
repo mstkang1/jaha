@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +11,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/ScrollToPlugin.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js'></script>
-    <script src="/js/scroll.js"></script>
-    <script src="/js/jaha.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/jaha.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/jaha.css">
     <title>자하생력</title>
 </head>
+
 <body>
 <div class="dim"></div>
 <header id="headerMenu">
-    <h1 class="mo"><a href="/index"><img src="img/mo-logo.png" alt=""></a></h1>
+    <h1 class="mo"><a href="/index"><img src="/img/mo-logo.png" alt=""></a></h1>
     <nav>
         <h1 class="pc"><a href="/index"><span class="hide">자하생력 로고</span></a></h1>
         <!-- 2023.04.28 메뉴 링크변경 -->
@@ -39,26 +41,40 @@
     <a href="#"><span class="hide">사이드 메뉴 열림</span></a>
 </div>
 <main>
+
+    <!--팝업영역-->
+    <th:block th:if="${popup.popupIsShow}">
+        <div>
+            <th:block th:if="${not #strings.isEmpty(popup.popupPcUrl)}">
+                <a th:href="@{{pcUrl}(pcUrl=${popup.popupPcUrl})}" th:target="${popup.popupPcIsNew} ? '_blank' : ''">
+            </th:block>
+            <img th:src="@{/popup/download/P/{popupSeq}(popupSeq=${popup.popupSeq})}" alt="">
+            <th:block th:if="${not #strings.isEmpty(popup.popupPcUrl)}">
+                </a>
+            </th:block>
+        </div>
+    </th:block>
+
     <!-- 메인 키비주얼 -->
-    <div class="ani-jaha pc"><img src="../img/ani-jaha.png" alt=""></div>
-    <div class="ani-mo-jaha mo"><img src="../img/ani-mo-jaha.png" alt=""></div>
+    <div class="ani-jaha pc"><img src="/img/ani-jaha.png" alt=""></div>
+    <div class="ani-mo-jaha mo"><img src="/img/ani-mo-jaha.png" alt=""></div>
     <section class="main-keyvisual">
         <h2><span>태반</span>의 힘을 담다.</h2>
         <span class="vertical-bar"></span>
         <div class="main-light">
-            <img src="img/light.png" alt="자하생력 제품 배경 빛 이미지">
+            <img src="/img/light.png" alt="자하생력 제품 배경 빛 이미지">
         </div>
         <div class="bg-dragon"></div>
         <div class="main-product">
-            <img src="img/main-product.png" alt="자하생력 제품 사진" class="pc">
-            <img src="img/main-product-mo.png" alt="자하생력 제품 사진" class="mo">
+            <img src="/img/main-product.png" alt="자하생력 제품 사진" class="pc">
+            <img src="/img/main-product-mo.png" alt="자하생력 제품 사진" class="mo">
         </div>
         <div class="rock-bg"></div>
         <div class="rock-left">
-            <img src="img/rock-left.png" alt="제품 사진 배경 바위 왼쪽 이미지">
+            <img src="/img/rock-left.png" alt="제품 사진 배경 바위 왼쪽 이미지">
         </div>
         <div class="rock-right">
-            <img src="img/rock-right.png" alt="제품 사진 배경 바위 오른쪽 이미지">
+            <img src="/img/rock-right.png" alt="제품 사진 배경 바위 오른쪽 이미지">
         </div>
     </section>
 
@@ -71,14 +87,26 @@
         <h2 class="mo">약국에서 만나는<br /> <span>피로회복 솔루션</span></h2>
         <div class="brand-product"></div>
         <ul>
-            <li><p>자양강장</p></li>
-            <li><p>허약체질</p></li>
-            <li><p>식욕부진</p></li>
-            <li><p>육체피로</p></li>
-            <li><p>병후의 체력저하</p></li>
+            <li>
+                <p>자양강장</p>
+            </li>
+            <li>
+                <p>허약체질</p>
+            </li>
+            <li>
+                <p>식욕부진</p>
+            </li>
+            <li>
+                <p>육체피로</p>
+            </li>
+            <li>
+                <p>병후의 체력저하</p>
+            </li>
         </ul>
-        <div class="desc pc">자하생력액은 과학적 기술 공정의 도입을 통해 <span>자하거(인태반)</span> 원료의<br />과학화 및 규격화를 실현한 <span>자하거엑스</span>를 주성분으로 하는 의약품입니다.</div>
-        <div class="desc mo">자하생력액은 과학적 기술 공정의 도입을 통해<br /> <span>자하거(인태반)</span> 원료의 과학화 및 규격화를 실현한<br /> <span>자하거엑스</span>를 주성분으로 하는 의약품입니다.</div>
+        <div class="desc pc">자하생력액은 과학적 기술 공정의 도입을 통해 <span>자하거(인태반)</span> 원료의<br />과학화 및 규격화를 실현한
+            <span>자하거엑스</span>를 주성분으로 하는 의약품입니다.</div>
+        <div class="desc mo">자하생력액은 과학적 기술 공정의 도입을 통해<br /> <span>자하거(인태반)</span> 원료의 과학화 및 규격화를 실현한<br />
+            <span>자하거엑스</span>를 주성분으로 하는 의약품입니다.</div>
     </section>
 
     <!-- DMF란? -->
@@ -109,10 +137,10 @@
                 <dd>임신 중 태아와 모체의 자궁을 연결하는 기관.</dd>
                 <dd class="pc">태아와 모체 사이에서 태아의 생존과 성장에 필요한 물질교환을 매개하는 구조물<br />
                     착상 후 3개월까지 자체에서 영양분, 성장인자 및 호르몬을 생산하여 공급<br />
-                    이후 태아의  소화, 배설, 면역 등 각종 장기 역할을 대행</dd>
+                    이후 태아의 소화, 배설, 면역 등 각종 장기 역할을 대행</dd>
                 <dd class="mo">태아와 모체 사이에서 태아의 생존과 성장에 필요한<br /> 물질교환을 매개하는 구조물<br />
                     착상 후 3개월까지 자체에서 영양분, 성장인자<br /> 및 호르몬을 생산하여 공급.</dd>
-                <dd class="mo">이후 태아의  소화, 배설, 면역 등<br /> 각종 장기 역할을 대행</dd>
+                <dd class="mo">이후 태아의 소화, 배설, 면역 등<br /> 각종 장기 역할을 대행</dd>
             </dl>
             <div class="ani-placenta"></div>
         </div>
@@ -120,35 +148,35 @@
 
     <!-- 자하거엑스 -->
     <section class="products-wrap">
-        <h2><span>자하거엑스</span></h2>
-        <h3>자하거엑스는 태반의 수용성물질만 추출한 원료</h3>
+        <!-- <h2><span>자하거엑스</span></h2>
+        <h3>자하거엑스는 태반의 수용성물질만 추출한 원료</h3> -->
         <div class="products">
             <ul> <!-- 순서변경 -->
                 <li>
-                    <div class="title">화성한약조제용<br /> 자하거추출물</div>
+                    <!-- <div class="title">화성한약조제용<br /> 자하거추출물</div> -->
                     <div class="product">
-                        <img src="img/img-products-02.png" alt="화성한약조제용 자하거추출물 제품 이미지" class="pc">
-                        <img src="img/img-products-mo-02.png" alt="화성한약조제용 자하거추출물 제품 이미지" class="mo">
+                        <img src="/img/img-products-02.png" alt="화성한약조제용 자하거추출물 제품 이미지" class="pc">
+                        <img src="/img/img-products-mo-02.png" alt="화성한약조제용 자하거추출물 제품 이미지" class="mo">
                     </div>
-                    <a href="javascript:openPopup('popup2');" class="pc">자세히 보기</a>
+                    <a href="javascript:openPopup('popup2');">자세히 보기</a>
                     <span class="bg"></span>
                 </li>
                 <li>
-                    <div class="title">화성경구용<br /> 자하거엑스</div>
+                    <!-- <div class="title">화성경구용<br /> 자하거엑스</div> -->
                     <div class="product">
-                        <img src="img/img-products-03.png" alt="화성경구용 자하거엑스 제품 이미지" class="pc">
-                        <img src="img/img-products-mo-03.png" alt="화성경구용 자하거엑스 제품 이미지" class="mo">
+                        <img src="/img/img-products-03.png" alt="화성경구용 자하거엑스 제품 이미지" class="pc">
+                        <img src="/img/img-products-mo-03.png" alt="화성경구용 자하거엑스 제품 이미지" class="mo">
                     </div>
-                    <a href="javascript:openPopup('popup3');" class="pc">자세히 보기</a>
+                    <a href="javascript:openPopup('popup3');">자세히 보기</a>
                     <span class="bg"></span>
                 </li>
                 <li>
-                    <div class="title">화성<br /> 자하거추출물</div>
+                    <!-- <div class="title">화성<br /> 자하거추출물</div> -->
                     <div class="product">
-                        <img src="img/img-products-01.png" alt="화성 자하거추출물 제품 이미지" class="pc">
-                        <img src="img/img-products-mo-01.png" alt="화성 자하거추출물 제품 이미지" class="mo">
+                        <img src="/img/img-products-01.png" alt="화성 자하거추출물 제품 이미지" class="pc">
+                        <img src="/img/img-products-mo-01.png" alt="화성 자하거추출물 제품 이미지" class="mo">
                     </div>
-                    <a href="javascript:openPopup('popup1');" class="pc">자세히 보기</a>
+                    <a href="javascript:openPopup('popup1');">자세히 보기</a>
                     <span class="bg"></span>
                 </li>
             </ul>
@@ -178,7 +206,8 @@
                                     <li>얼굴의 기미를 치료한다. <br>
                                     <li>남녀의 모든 쇠약한 증상을 치료하고 心(심)을 편안하게 하고<br />
                                         血(혈)을 보충하며 기운을 북돋우며 精(정)을 보충한다 <br>
-                                        <span>※ ref. 본초강목</span></li>
+                                        <span>※ ref. 본초강목</span>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -269,12 +298,12 @@
         <h3>자하생력 이야기</h3>
         <div class="history pc">
             <div class="photo-wrap">
-                <div class="photo photo1"><img src="img/img-history-01.png" alt="연혁 사진1"></div>
-                <div class="photo photo2"><img src="img/img-history-02.png" alt="연혁 사진2"></div>
-                <div class="photo photo3"><img src="img/img-history-03.png" alt="연혁 사진3"></div>
-                <div class="photo photo4"><img src="img/img-history-04.png" alt="연혁 사진4"></div>
-                <div class="photo photo5"><img src="img/img-history-05.png" alt="연혁 사진5"></div>
-                <div class="photo photo6"><img src="img/img-history-06.png" alt="연혁 사진6"></div>
+                <div class="photo photo1"><img src="/img/img-history-01.png" alt="연혁 사진1"></div>
+                <div class="photo photo2"><img src="/img/img-history-02.png" alt="연혁 사진2"></div>
+                <div class="photo photo3"><img src="/img/img-history-03.png" alt="연혁 사진3"></div>
+                <div class="photo photo4"><img src="/img/img-history-04.png" alt="연혁 사진4"></div>
+                <div class="photo photo5"><img src="/img/img-history-05.png" alt="연혁 사진5"></div>
+                <div class="photo photo6"><img src="/img/img-history-06.png" alt="연혁 사진6"></div>
             </div>
             <div class="timeline">
                 <div class="year2006">
@@ -442,17 +471,20 @@
         <div class="brand2 pc">
             <ul>
                 <li>
-                    <div class="img"><a href="javascript:openPopup('popup4');"><img src="img/img-brand2-01.png" alt=""></a></div>
+                    <div class="img"><a href="javascript:openPopup('popup4');"><img src="/img/img-brand2-01.png"
+                                                                                    alt=""></a></div>
                     <a href="javascript:openPopup('popup4');">60 바이알</a>
                     <span></span>
                 </li>
                 <li>
-                    <div class="img"><a href="javascript:openPopup('popup5');"><img src="img/img-brand2-02.png" alt=""></a></div>
+                    <div class="img"><a href="javascript:openPopup('popup5');"><img src="/img/img-brand2-02.png"
+                                                                                    alt=""></a></div>
                     <a href="javascript:openPopup('popup5');">80 바이알</a>
                     <span></span>
                 </li>
                 <li>
-                    <div class="img"><a href="javascript:openPopup('popup6');"><img src="img/img-brand2-03.png" alt=""></a></div>
+                    <div class="img"><a href="javascript:openPopup('popup6');"><img src="/img/img-brand2-03.png"
+                                                                                    alt=""></a></div>
                     <a href="javascript:openPopup('popup6');">90 바이알</a>
                     <span></span>
                 </li>
@@ -462,15 +494,18 @@
             <div class="swiper productJaha">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <p><a href="javascript:openPopup('popup4');"><img src="img/img-product-mo-01.png" alt=""></a></p>
+                        <p><a href="javascript:openPopup('popup4');"><img src="/img/img-product-mo-01.png"
+                                                                          alt=""></a></p>
                         <p class="title"><a href="javascript:openPopup('popup4');">60 바이알</a></p>
                     </div>
                     <div class="swiper-slide">
-                        <p><a href="javascript:openPopup('popup5');"><img src="img/img-product-mo-02.png" alt=""></a></p>
+                        <p><a href="javascript:openPopup('popup5');"><img src="/img/img-product-mo-02.png"
+                                                                          alt=""></a></p>
                         <p class="title"><a href="javascript:openPopup('popup5');">80 바이알</a></p>
                     </div>
                     <div class="swiper-slide">
-                        <p><a href="javascript:openPopup('popup6');"><img src="img/img-product-mo-03.png" alt=""></a></p>
+                        <p><a href="javascript:openPopup('popup6');"><img src="/img/img-product-mo-03.png"
+                                                                          alt=""></a></p>
                         <p class="title"><a href="javascript:openPopup('popup6');">90 바이알</a></p>
                     </div>
                 </div>
@@ -482,8 +517,8 @@
             <div class="popup-wrap">
                 <a href="javascript:closePopup('popup4');" title="팝업창 닫기 버튼" class="btn-close"></a>
                 <div class="photo">
-                    <img src="img/img-product-60.png" alt="" class="pc">
-                    <img src="img/img-product-mo-60.png" alt="" class="mo">
+                    <img src="/img/img-product-60.png" alt="" class="pc">
+                    <img src="/img/img-product-mo-60.png" alt="" class="mo">
                 </div>
                 <table class="product2">
                     <colgroup>
@@ -514,11 +549,11 @@
                         <th>효능효과</th>
                         <td><span class="pc">
                                         자양강장, 허약체질, 육체피로, 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성, 소모성 질환
+                                        식욕부진, 영양장애, 발열성, 소모성 질환
                                     </span>
                             <span class="mo">
                                         자양강장, 허약체질, 육체피로,<br /> 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성,<br />소모성 질환
+                                        식욕부진, 영양장애, 발열성,<br />소모성 질환
                                     </span>
                         </td>
                     </tr>
@@ -528,15 +563,15 @@
                     </tr>
                     </tbody>
                 </table>
-                <a href="file/PP1408-L02.pdf" target="_blank" class="file-down">주의사항</a>
+                <a href="javascript:fileDown('자하생력액(60V)');" class="file-down">주의사항</a>
             </div>
         </div>
         <div class="popup-wide popup5">
             <div class="popup-wrap">
                 <a href="javascript:closePopup('popup5');" title="팝업창 닫기 버튼" class="btn-close"></a>
                 <div class="photo">
-                    <img src="img/img-product-90.png" alt="" class="pc">
-                    <img src="img/img-product-mo-90.png" alt="" class="mo">
+                    <img src="/img/img-product-90.png" alt="" class="pc">
+                    <img src="/img/img-product-mo-90.png" alt="" class="mo">
                 </div>
                 <table class="product2">
                     <colgroup>
@@ -567,11 +602,11 @@
                         <th>효능효과</th>
                         <td><span class="pc">
                                         자양강장, 허약체질, 육체피로, 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성, 소모성 질환
+                                        식욕부진, 영양장애, 발열성, 소모성 질환
                                     </span>
                             <span class="mo">
                                         자양강장, 허약체질, 육체피로,<br /> 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성,<br /> 소모성 질환
+                                        식욕부진, 영양장애, 발열성,<br /> 소모성 질환
                                     </span>
                         </td>
                     </tr>
@@ -581,7 +616,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <a href="file/PP1408-L02.pdf" target="_blank" class="file-down">주의사항</a>
+                <a href="javascript:fileDown('자하생력액(80V)');" class="file-down">주의사항</a>
             </div>
         </div>
         <div class="popup popup6">
@@ -616,11 +651,11 @@
                         <th>효능효과</th>
                         <td><span class="pc">
                                         자양강장, 허약체질, 육체피로, 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성, 소모성 질환
+                                        식욕부진, 영양장애, 발열성, 소모성 질환
                                     </span>
                             <span class="mo">
                                         자양강장, 허약체질, 육체피로,<br /> 병후의 체력저하, <br />
-                                            식욕부진, 영양장애, 발열성,<br /> 소모성 질환
+                                        식욕부진, 영양장애, 발열성,<br /> 소모성 질환
                                     </span>
                         </td>
                     </tr>
@@ -630,7 +665,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <a href="file/PP1408-L02.pdf" target="_blank" class="file-down">주의사항</a>
+                <a href="javascript:fileDown('자하생력액(90V)');" class="file-down">주의사항</a>
             </div>
         </div>
         <div class="popup500 popup-terms">
@@ -640,10 +675,10 @@
                 <div class="terms-box">
                     <strong>제1조. 목적</strong>
                     <p>
-                                <span>
-                                    1. 이용자는 본 약관에 따라 당 사이트가 제공하는 서비스를 받는 자를<br>
-                                    말하며 경남제약㈜(www.kyungnampharm.com) 이하 “회사”라 함.<br>
-                                </span>
+                            <span>
+                                1. 이용자는 본 약관에 따라 당 사이트가 제공하는 서비스를 받는 자를<br>
+                                말하며 경남제약㈜(www.kyungnampharm.com) 이하 “회사”라 함.<br>
+                            </span>
                         이용자 약관은 이용자가 회사에서 제공하는 인터넷 관련 서비스를<br>
                         이용함에 있어 이용자와 회사의 권리 및 의무를 규정함을 목적으로 합니다.<br>
                     </p>
@@ -791,7 +826,7 @@
             </div>
             <dl class="m-step1">
                 <dt>원료 인태반 수집 및 처리</dt>
-                <dd>- 산모  적정여부 검정 - 해외 체류 여부 확인</dd>
+                <dd>- 산모 적정여부 검정 - 해외 체류 여부 확인</dd>
                 <dd>- 바이러스 감염 유무 확인</dd>
                 <dd>- 태반의 의약품으로 사용에 대한<br />
                     산모 동의서 작성</dd>
@@ -826,7 +861,7 @@
             <h3>자하엑거스</h3>
             <dl class="m-step1">
                 <dt>원료 인태반 수집 및 처리</dt>
-                <dd>산모  적정여부 검정 - 해외 체류 여부 확인</dd>
+                <dd>산모 적정여부 검정 - 해외 체류 여부 확인</dd>
                 <dd>바이러스 감염 유무 확인</dd>
                 <dd>태반의 의약품으로 사용에 대한<br />
                     산모 동의서 작성</dd>
@@ -987,7 +1022,8 @@
                     <span>Q</span> 자하거(태반)은<br /> 어디에 사용되고 있습니까?
                     <ul>
                         <li>
-                            경구용의약품, 주사제, 내복약, 건강식품, 화장품 등에<br /> 사용되고 있으며, 자하생력액에 함유된 자하거 엑스는<br /> 인태반을 주 원료로 합니다.<br />
+                            경구용의약품, 주사제, 내복약, 건강식품, 화장품 등에<br /> 사용되고 있으며, 자하생력액에 함유된 자하거 엑스는<br /> 인태반을 주 원료로
+                            합니다.<br />
                             건강식품 이나 화장품의 원료로는 돼지태반이 사용되고 있습니다.
                         </li>
                     </ul>
@@ -1060,13 +1096,17 @@
 <footer>
     <div class="footer-wrap">
         <div class="util">
-            <div class="company-logo"><a href="http://www.kyungnampharm.com" title="경남제약 사이트 바로가기"><span class="hide">경남제약 로고</span></a></div>
+            <div class="company-logo"><a href="http://www.kyungnampharm.com" title="경남제약 사이트 바로가기"><span
+                    class="hide">경남제약 로고</span></a></div>
             <p class="terms pc"><a href="javascript:popupWindow()">이용약관</a></p>
             <p class="terms mo"><a href="javascript:openPopupDim('popup-terms');">이용약관</a></p>
             <ul class="sns">
-                <li><a href="https://www.youtube.com/user/lemona2014" title="유튜브 바로가기" target="_blank"><span class="hide">유튜브</span></a></li>
-                <li><a href="https://www.instagram.com/lemona_official/" title="인스타그램 바로가기" target="_blank"><span class="hide">인스타그램</span></a></li>
-                <li><a href="https://www.facebook.com/kyungnampharm" title="페이스북 바로가기" target="_blank"><span class="hide">페이스북</span></a></li>
+                <li><a href="https://www.youtube.com/user/lemona2014" title="유튜브 바로가기" target="_blank"><span
+                        class="hide">유튜브</span></a></li>
+                <li><a href="https://www.instagram.com/lemona_official/" title="인스타그램 바로가기" target="_blank"><span
+                        class="hide">인스타그램</span></a></li>
+                <li><a href="https://www.facebook.com/kyungnampharm" title="페이스북 바로가기" target="_blank"><span
+                        class="hide">페이스북</span></a></li>
             </ul>
         </div>
         <div class="info pc">
@@ -1079,7 +1119,8 @@
                 <span>[서울] 서울시 강남구 언주로 702(논현동, 라이브플렉스타워) 6, 7, 8, 11층</span><br />
                 <span>[본사] 경상남도 의령군 의령읍 구룡로4남길 79</span>
             </address>
-            <select name="family-site" id="family-site" class="family-site" onchange="window.open(value, '_blank');">
+            <select name="family-site" id="family-site" class="family-site"
+                    onchange="window.open(value, '_blank');">
                 <option value="">FAMILY SITE</option>
                 <option value="http://www.kyungnampharm.com">경남제약</option>
                 <option value="https://smartstore.naver.com/live-care">라이브케어</option>
@@ -1099,7 +1140,8 @@
                 <span>[서울] 서울시 강남구 언주로 702, 7층(논현동, 라이브플렉스타워)</span><br />
                 <span>[본사] 경상남도 의령군 의령읍 구룡로4남길 79</span>
             </address>
-            <select name="family-site" id="family-site" class="family-site pc" onchange="window.open(value, '_blank');">
+            <select name="family-site" id="family-site" class="family-site pc"
+                    onchange="window.open(value, '_blank');">
                 <option value="">FAMILY SITE</option>
                 <option value="http://www.kyungnampharm.com">경남제약</option>
                 <option value="https://smartstore.naver.com/live-care">라이브케어</option>
@@ -1113,5 +1155,11 @@
 </footer>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+    function fileDown(productName) {
+        window.location.href="/product/download/" + productName;
+    }
+</script>
 </body>
+
 </html>
