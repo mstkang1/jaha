@@ -3,8 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8" />>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta property="og:url" content="">
+    <meta property="og:title" content="자하생력">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/image.png">
+    <meta property="og:description" content="자하생력 | 태반의 힘을 담은 피로회복 솔루션">
+    <meta name="title" content="자하생력">
+    <meta name="Subject" content="자하생력 소개">
+    <meta name="keywords" content="자하생력, 피로회복제, 인태반, 경남제약 자하생력">
+    <meta name="Descript-xion" content="태반의 힘을 담은, 약국에서 만나는 피로회복 솔루션! 자하생력">
+    <meta name="Description" content=" 태반의 힘을 담은, 약국에서 만나는 피로회복 솔루션! 자하생력 ">
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js'></script>
@@ -15,11 +28,13 @@
     <script src="js/jaha.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/jaha.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16">
     <title>자하생력</title>
 </head>
 
 <body>
     <div class="dim"></div>
+    <div class="dim-lodaing"></div>
     <header id="headerMenu">
         <h1 class="mo"><a href="index.html"><img src="img/mo-logo.png" alt=""></a></h1>
         <nav>
@@ -760,7 +775,7 @@
                 </dl>
                 <dl>
                     <dt>포장</dt>
-                    <dd>고급포장으로 선물하기 좋으며<br />
+                    <dd>
                         60, 80, 90 바이알로 다양한 선택이 가능</dd>
                 </dl>
                 <dl>
@@ -790,8 +805,7 @@
                 </dl>
                 <dl>
                     <dt>포장</dt>
-                    <dd>고급포장으로 선물하기<br />
-                        좋으며 60, 80, 90 바이알로<br />
+                    <dd>60, 80, 90 바이알로<br />
                         다양한 선택이 가능</dd>
                 </dl>
                 <dl>
@@ -1137,6 +1151,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- 20230530 레이어팝업 추가 -->
+    <!-- <button type="button" onclick="openPopup('layer-popup')"></button> -->
+    <div class="popup layer-popup">
+        <div class="popup-wrap">
+            <div class="modal-header">
+                <h1 class="modal-title">타이틀 위치</h1>
+            </div>
+            <div class="modal-body">
+                <p>내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치내용 위치 내용 위치</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="closePopupDim('layer-popup');">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button type="button" onclick="openLodaingPop('lodaing')"></button> -->
+    <div class="popup lodaing">
+        <div class="popup-wrap">
+            <img src="img/lodaing.gif" alt="">
+        </div>
+    </div>
+    
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </body>
