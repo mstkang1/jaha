@@ -689,9 +689,10 @@ table.product2 tr:nth-of-type(4) th, table.product2 tr:nth-of-type(4) td {
 }
 
 .modal-footer {
+    border-top: 1px solid #e5e5e5; 
     display: flex;
     justify-content: center;
-    margin: auto 0 0 0;
+    padding: 12px 0 0 0;
 }
 
 .modal-footer button {
@@ -3290,9 +3291,11 @@ select {
     }
 
     .modal-footer {
+        border-top: 1px solid #e5e5e5; 
         display: flex;
         justify-content: center;
-        margin: auto 0 0 0;
+        margin: 0;
+        padding: 12px 0 0 0;
     }
 
     .modal-footer button {
@@ -3530,13 +3533,17 @@ select {
 }
 
 .lodaing {
+    background: #fff;
     border-radius: 0;
+    display: none;
     height: 100%;
     top: 0;
     transform: unset;
     left: 0;
     width: 100%;
     z-index: 1001;
+    position: fixed;
+    pointer-events: auto;
 }
 
 .lodaing img {
@@ -3546,4 +3553,55 @@ select {
 .lodaing .popup-wrap {
     align-items: center;
     justify-content: center;
+}
+
+.layer-popup {
+    height: auto;
+    width: 300px;
+}
+
+.layer-popup .popup-wrap {
+    padding: 12px;
+}
+
+.layer-popup img {
+    margin: 0 0 12px 0;
+}
+
+@media screen and (max-width:576px) {
+    .lodaing {
+        background: #fff;
+        border-radius: 0;
+        display: none;
+        height: 100%;
+        top: 0;
+        transform: unset;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+        position: fixed;
+        pointer-events: auto;
+    }
+    
+    .lodaing img {
+        width: 80px;
+    }
+    
+    .lodaing .popup-wrap {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .layer-popup {
+        height: auto;
+        width: 264px;
+    }
+    
+    .layer-popup .popup-wrap {
+        padding: 12px;
+    }
+    
+    .layer-popup img {
+        margin: 0 0 12px 0;
+    }
 }

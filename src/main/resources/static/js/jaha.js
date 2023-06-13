@@ -162,11 +162,18 @@ function closePopupDim(modalname) {
     $('.dim').removeClass('on');
 }
 
-function openLodaingPop(modalname) {
+function loadingOpen(modalname) {
     document.get
     $("." + modalname).fadeIn(300);
     $('body').css("pointer-events","none");
-    $('.dim-lodaing').addClass('on');
+    $('.lodaing').addClass('on');
+}
+
+function lodaingClose(modalname) {
+    document.get
+    $("." + modalname).fadeOut(300);
+    $('body').css("pointer-events","auto");
+    $('.lodaing').removeClass('on');
 }
 
 function popupWindow() {
