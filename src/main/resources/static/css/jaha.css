@@ -589,11 +589,12 @@ nav {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 20px;
+    justify-content: center;
+    padding: 48px;
 }
 
 .popup-wrap .photo {
-    padding-right: 50px;
+    margin: 0 auto;
 }
 
 .popup-wrap table {
@@ -628,7 +629,7 @@ nav {
 }
 
 .popup-wrap table tr:nth-of-type(1) th, .popup-wrap table tr:nth-of-type(1) td {
-    font-size: 18px;
+    font-size: 16px;
     color: #b57431;
     font-weight: 500;
 }
@@ -667,6 +668,16 @@ table.product2 tr:nth-of-type(4) th, table.product2 tr:nth-of-type(4) td {
     font-weight: 300;
     color: #fff;
     letter-spacing: -1px;
+    margin: 0 auto;
+}
+
+.popup.popup6 {
+    height: max-content;
+    width: 746px;
+}
+
+.popup.popup6 .popup-wrap {
+    padding: 72px 112px;
 }
 
 .modal-header {
@@ -3060,6 +3071,15 @@ select {
         pointer-events: auto;
     }
 
+    .popup.popup6 {
+        border-radius: 0;
+        width: calc(100% - 40px);
+    }
+
+    .popup.popup6 .popup-wrap {
+        padding: 40px;
+    }
+
     .popup-wide {
         display: none;
         position: fixed;
@@ -3068,12 +3088,11 @@ select {
         transform: translate(-50%, -50%);
         background: #fff;
         width: 320px;
-        height: 660px;
+        height: 642px;
         z-index: 1000;
         font-family: 'Noto Sans KR', sans-serif;
         font-size: 0.750rem;
         color: #666;
-        padding: 1.875rem 0;
         pointer-events: auto;
     }
 
@@ -3206,7 +3225,7 @@ select {
     }
 
     .popup-wrap table.product2 {
-        width: 90%;
+        width: 100%;
         font-weight: 300;
         margin-bottom: 16px;
     }
