@@ -177,6 +177,17 @@ nav {
     z-index: 90;
 }
 
+.main-product p {
+    bottom: 50px;
+    color: #f6d397;
+    font-size: 14px;
+    opacity: 0.25;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
 .bg-dragon {
     position: absolute;
     top: 160px;
@@ -1930,6 +1941,19 @@ select {
         z-index: 90;
     }
 
+    .main-product p {
+        bottom: -10px;
+        color: #f6d397;
+        font-size: 10px;
+        opacity: 0.25;
+        position: absolute;
+        left: 50%;
+        line-height: 14px;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 100;
+    }
+
     .bg-dragon {
         position: absolute;
         top: 0;
@@ -3074,7 +3098,7 @@ select {
     .popup.popup6 {
         border-radius: 0;
         width: calc(100% - 40px);
-        height: 500px;
+        height: 520px;
     }
 
     .popup.popup6 .popup-wrap {
