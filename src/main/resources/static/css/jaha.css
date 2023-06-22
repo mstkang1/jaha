@@ -177,9 +177,9 @@ nav {
     z-index: 90;
 }
 
-.main-product p {
+.main-num {
     bottom: 50px;
-    color: #f6d397;
+    color: #f6d397 !important;
     font-size: 14px;
     opacity: 0.25;
     position: absolute;
@@ -683,12 +683,13 @@ table.product2 tr:nth-of-type(4) th, table.product2 tr:nth-of-type(4) td {
 }
 
 .popup.popup6 {
-    height: 676px;
+    border-radius: 0;
+    height: 627px;
     width: 746px;
 }
 
 .popup.popup6 .popup-wrap {
-    padding: 72px 112px;
+    padding: 64px 112px;
 }
 
 .modal-header {
@@ -1941,9 +1942,9 @@ select {
         z-index: 90;
     }
 
-    .main-product p {
+    .main-num {
         bottom: -10px;
-        color: #f6d397;
+        color: #f6d397 !important;
         font-size: 10px;
         opacity: 0.25;
         position: absolute;
@@ -3098,7 +3099,7 @@ select {
     .popup.popup6 {
         border-radius: 0;
         width: calc(100% - 40px);
-        height: 520px;
+        height: 540px;
     }
 
     .popup.popup6 .popup-wrap {
