@@ -177,7 +177,7 @@ nav {
     z-index: 90;
 }
 
-.main-num {
+.main-product p {
     bottom: 50px;
     color: #f6d397 !important;
     font-size: 14px;
@@ -1941,8 +1941,8 @@ select {
         height: 193px;
         z-index: 90;
     }
-
-    .main-num {
+    
+    .main-product p {
         bottom: -10px;
         color: #f6d397 !important;
         font-size: 10px;
