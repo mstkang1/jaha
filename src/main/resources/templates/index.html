@@ -1192,7 +1192,7 @@
             <div class="modal-body">
                 <!--MO-->
                 <th:block th:if="${not #strings.isEmpty(popup.popupMoUrl)}">
-                    <a th:href="@{{pcUrl}(pcUrl=${popup.popupMoUrl})}" th:target="${popup.popupMoIsNew} ? '_blank' : ''">
+                    <a th:href="${popup.popupMoUrl}" th:target="${popup.popupMoIsNew} ? '_blank' : ''">
                 </th:block>
                 <img class="mo" th:src="@{/popup/download/M/{popupSeq}(popupSeq=${popup.popupSeq})}" alt="">
                 <th:block th:if="${not #strings.isEmpty(popup.popupMoUrl)}">
@@ -1200,7 +1200,7 @@
                 </th:block>
                 <!--PC-->
                 <th:block th:if="${not #strings.isEmpty(popup.popupPcUrl)}">
-                    <a th:href="@{{pcUrl}(pcUrl=${popup.popupPcUrl})}" th:target="${popup.popupPcIsNew} ? '_blank' : ''">
+                    <a th:href="${popup.popupPcUrl}" th:target="${popup.popupPcIsNew} ? '_blank' : ''">
                 </th:block>
                 <img class="pc" th:src="@{/popup/download/P/{popupSeq}(popupSeq=${popup.popupSeq})}" alt="">
                 <th:block th:if="${not #strings.isEmpty(popup.popupPcUrl)}">
