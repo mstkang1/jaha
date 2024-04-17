@@ -1737,6 +1737,7 @@ select {
     margin: 70px 0 0 0;
 }
 
+.emailtag { color: #646363; }
 /* 스마트폰 */
 @media screen and (max-width:576px) {
     .pc {
